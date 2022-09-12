@@ -33,6 +33,14 @@ const Task = () => {
     window.location.reload()
   }
 
+  const updateListArray = (obj, index) => {
+    let tempList = taskList
+    tempList[index] = obj
+    localStorage.setItem('taskList', JSON.stringify(tempList))
+    setTaskList(tempList)
+    window.location.reload()
+  }
+
   const toggle = () => {
     setModal(!modal);
   }
@@ -49,7 +57,7 @@ const Task = () => {
         taskList.map((obj, index) => {
           return (
             <>
-            <Card taskObj={obj} index={index} deleteTask={deleteTask} />
+            <Card taskObj={obj} index={index} deleteTask={deleteTask} updateList = {updateListArray} />
             </>
           );
         })

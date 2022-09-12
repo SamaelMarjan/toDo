@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EditTask from '../modals/EditTask';
 
-const Card = ({taskObj, index, deleteTask}) => {
+const Card = ({taskObj, index, deleteTask, updateList}) => {
     const [modal, setModal] = useState(false);
 
     const colors = [
@@ -31,6 +31,10 @@ const Card = ({taskObj, index, deleteTask}) => {
         setModal(!modal);
     }
 
+    const updateTask = (obj) => {
+        updateList(obj, index)
+    }
+
     const handleDelete = () => {
         deleteTask(index)
     }
@@ -47,7 +51,7 @@ const Card = ({taskObj, index, deleteTask}) => {
                 <i className="fas fa-trash-alt" style = {{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick={handleDelete}></i>
             </div>
         </div>
-        <EditTask modal = {modal} toggle = {toggle} taskObj= {taskObj} />
+        <EditTask modal = {modal} toggle = {toggle} updateTask = {updateTask} taskObj= {taskObj} />
     </div>
   )
 }
