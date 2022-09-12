@@ -32,8 +32,9 @@ const Task = () => {
   return (
     <>
     <div className='header text-center'>
-      <h3>todo list</h3>
-      <button className='btn btn-primary mt-2' onClick={() => setModal(true)}>create task</button>
+      <h3>Hello!</h3>
+      <p>give me some advice. how can I improve myself?</p>
+      <button className='btn btn-primary' onClick={() => setModal(true)}>create task</button>
     </div>
     <div className='task-container'>
       {
