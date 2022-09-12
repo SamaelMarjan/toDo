@@ -63,7 +63,7 @@ const Task = () => {
         })
       }
     </div>
-    <CreateTask modal={modal} toggle={toggle} save= {saveTask} />
+    <CreateTask modal={modal} toggle={toggle} save= {saveTask}/>
     </>
   )
 }
